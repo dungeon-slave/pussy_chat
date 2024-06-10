@@ -8,9 +8,17 @@ import 'package:domain/enums/message_status_enum.dart';
 import 'package:core/date_time_extension.dart';
 
 import 'package:ui_kit/message_widget/message_widget.dart';
+import 'package:ui_kit/message_widget/message_widget_config.dart';
 
 class ChatScreen<T extends MessageModel> extends StatefulWidget {
   final ChatModel<T> model;
+  static const MessageWidgetConfig config = MessageWidgetConfig(
+    senderTextStyle: TextStyle(fontWeight: FontWeight.bold),
+    messageTextStyle: TextStyle(),
+    timeTextStyle: TextStyle(),
+    sentMessageBackgroundColor: Colors.greenAccent,
+    receivedMessageBackgroundColor: Colors.white,
+  );
 
   const ChatScreen({
     required this.model,
@@ -55,6 +63,7 @@ class _ChatScreenState<T extends MessageModel> extends State<ChatScreen<T>> {
                         : null,
                     userName: item.userName,
                     isMyMessage: item.isMyMessage,
+                    config: ChatScreen.config,
                   ),
               ],
             ),

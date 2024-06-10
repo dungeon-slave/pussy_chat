@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class MessageSender extends StatelessWidget {
   final String senderName;
+  final TextStyle textStyle;
 
   const MessageSender({
     required this.senderName,
+    required this.textStyle,
   });
 
   @override
@@ -15,7 +17,7 @@ class MessageSender extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           senderName,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: textStyle,
         ),
       ),
     );

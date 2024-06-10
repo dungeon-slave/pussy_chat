@@ -9,8 +9,8 @@ class MessageContainer extends StatelessWidget {
   const MessageContainer({
     required this.content,
     required this.isSent,
-    this.sentMessageBackgroundColor = Colors.greenAccent,
-    this.receivedMessageBackgroundColor = Colors.white,
+    required this.sentMessageBackgroundColor,
+    required this.receivedMessageBackgroundColor,
   });
 
   @override
